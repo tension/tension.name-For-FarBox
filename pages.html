@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {% if request.path == 'links.md' %}
+        Links Friends
+    {% elif request.path == 'about.md' %}
+        About Me
+    {% else %}
+        {{ post.title }}
+    {% endif %}
+
+{% endblock %}
+
+
+{% block content %}
+    <article>
+        <h2 class="title">{{ post.title }}</h2>
+
+        <p class="entry_data">{{ post.date | date('%b %d, %Y %H:%M') }}</p>
+
+        <section>
+			{{ post.content }}
+        </section>
+
+    </article>
+{% endblock %}

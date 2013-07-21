@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}{{ site.configs.title }} - 分类{% endblock %}
+
+{% set cats = get_folders("/") %}
+
+{% block content %}
+
+        {% if not posts%}
+			{% for cat in cats %}
+			{% set posts = get_posts(path=cat.path) %}
+				{% if posts %}
+				<section class="archives">
+					<h1 class="year">{{ cat.title | upper }}</h1>
+					{% for post in posts %}
+						<article>
+							{% if post.metadata.link %}
+								<h2 class="title">[链接]<a href="{{post.metadata.link}}" target="_blank">{{ post.title }}</a></h2>
+							{% else %}
+								<h2 class="title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
+							{% endif %}
+								<p class="entry_data">{{ post.date | date('%b %d, %Y %H:%M') }}</p>
+								<span class="views">{{ post.visits }}</span>
+						</article>
+					{% endfor %}
+				</section>
+				{% endif %}
+			{% endfor %}
+		{% else %}
+			{% include 'include/posts_list.html' %}
+		{% endif %}
+
+{% endblock %}

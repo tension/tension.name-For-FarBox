@@ -1,0 +1,14 @@
+<ul class="image_list clearfix">
+{% for file in files %}
+    <li {% if file.content_type == 'folder' %}class="folder"{% endif %}>
+        <a href="/file/{{file.path}}">
+            <img src='{{ file.url }}?width=160&height=160&fixed=true' title="{{ file.title }}" />
+            {% if file.content_type == 'folder' %}
+            <span>{{ file.images_count }} 张照片</span>
+            {% endif %}
+        </a>
+    </li>
+{% endfor %}
+</ul>
+
+{% include 'include/paginator.html' %}
