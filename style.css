@@ -322,8 +322,8 @@ a:hover,a:focus {
 }
 
 #page {
-	width: 940px;
-	/*width: 768px; */
+	/* width: 940px; */
+	width: 768px;
 	margin: 0 auto;	
 }
 header {
@@ -405,8 +405,8 @@ p.entry_data span {
 	margin-bottom: 10px;
 }
 section.content {
-	width: 700px;
-    float: left;
+	/* width: 700px;
+    float: left; */
 	display: block;
 }
 
@@ -415,6 +415,18 @@ aside {
 	display: block;
     float: left;
     margin-left: 20px;
+}
+aside section {
+	margin-bottom: 10px;
+}
+aside section h4 {
+	margin-bottom: 5px;
+}
+.category ul {
+	margin-left: 10px;
+}
+.category li {
+	line-height: 35px;
 }
 section.tags {
 	margin: 10px 0;

@@ -1,20 +1,33 @@
 {% for post in posts %}
-    <article>
-        <h2 class="title"><a href="{{post.url}}#content">{{ post.title }}</a></h2>
-
-        <p class="entry_data">{{ post.date | date('%b %d, %Y %H:%M') }}</p>
-
-        <section>
-            {{ post| auto_content }}
-        </section>
-        
-        <section class="tags">
-            {% for tag in post.tags %}
-                <a class="tag" href="/tags/{{ tag }}">{{ tag }}</a>
-            {% endfor %}
-        </section>
-
-    </article>
+	
+	    <article>
+	        <h2 class="title">
+	        	<a href="{{post.url}}#content">{{ post.title }}</a>
+	        </h2>
+	
+	        <p class="entry_data">
+	        	{{ post.date | date('%b %d, %Y %H:%M') }}
+	        	
+	        	<span>/</span>
+	        	
+{% set categories = get_folders(level=[1,2], min_posts_count=1) %}
+{% for category in categories %}
+    <a href="/category/{{ category.path }}">{{ category.title }}</a>
+{% endfor %}
+	        </p>
+	
+	        <section>
+	            {{ post| auto_content }}
+	        </section>
+	        
+	        <section class="tags">
+	            {% for tag in post.tags %}
+	                <a class="tag" href="/tags/{{ tag }}">{{ tag }}</a>
+	            {% endfor %}
+	        </section>
+	
+	    </article>
+	
 {% endfor %}
 
 {% include 'include/paginator.html' %}
