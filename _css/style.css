@@ -392,11 +392,6 @@ p.entry_data {
 	color: #bbb;
 	margin-bottom: 15px;
 }
-p.entry_data a {
-    color: #666;
-    font-weight: bold;
-    font-variant: small-caps;
-}
 p.entry_data span {
     color: #CCC;
     padding: 0 5px;
@@ -427,17 +422,6 @@ aside section h4 {
 }
 .category li {
 	line-height: 35px;
-}
-section.tags {
-	margin: 10px 0;
-}
-section.tags a {
-	padding-right: 10px;
-	margin-right: 5px;
-	border-right: 1px dotted #ccc;
-}
-section.tags a:last-child {
-	border-right: 0 none;
 }
 .image_list li {
     border: 1px dashed #CCCCCC;
