@@ -1,8 +1,12 @@
 	<aside>
 
-		<section class="example-tqq" >
+		<section class="category" >
+			<h4>Category</h4>
 			<ul>
-				<script src="http://tension.name/demo/t/?num=4"></script>
+			{% set categories = get_folders(level=[1,2], min_posts_count=1) %}
+			{% for category in categories %}
+			    <li><a href="/category/{{ category.path }}">{{ category.title }}</a></li>
+			{% endfor %}
 			</ul>
 		</section>
 		
