@@ -12,7 +12,7 @@ _/      _/_/_/_/  _/      _/  _/_/_/    _/_/_/    _/_/    _/      _/
 	<title>{% block title %} {% endblock %}</title>
 	<link rel='alternate' type='application/rss+xml' title='atom 1.0' href='/feed' />
 	<meta name="description" content="{{ site.configs.description }}" />
-	<meta name="keywords" content="{% for tag_name, tag_count in site.tags %}{{ tag_name }} ,{% endfor %}" />
+	<meta name="keywords" content="{% if site.configs.keywords %}{{ site.configs.keywords }}{%else%}{% for tag_name, tag_count in site.tags %}{{ tag_name }} ,{% endfor %}{% endif %}" />
 	<script type="text/javascript" src="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
 	<script type="text/javascript" src="/template/_js/prettify.js"></script>
 	<link href="/template/_css/style.css" rel="stylesheet" type="text/css">
