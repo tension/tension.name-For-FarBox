@@ -11,8 +11,8 @@ _/      _/_/_/_/  _/      _/  _/_/_/    _/_/_/    _/_/    _/      _/
 	<meta charset="utf-8">
 	<title>{% block title %} {% endblock %}</title>
 	<link rel='alternate' type='application/rss+xml' title='atom 1.0' href='/feed' />
-	<meta name="description" content="我以为酒要一口一口喝,路要一步一步走,步子迈大了,喀,容易卡着蛋!" />
-	<meta name="keywords" content="tension, 设计, 制作, 重构, 交互, WebRebuild, Web Developer, I love this game. " />
+	<meta name="description" content="{{ site.config.description }}" />
+	<meta name="keywords" content="{% for tag_name, tag_count in site.tags %}{{ tag_name }} ,{% endfor %}" />
 	<script type="text/javascript" src="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
 	<script type="text/javascript" src="/template/_js/prettify.js"></script>
 	<link href="/template/_css/style.css" rel="stylesheet" type="text/css">
