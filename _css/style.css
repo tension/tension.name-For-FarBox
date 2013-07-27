@@ -424,10 +424,15 @@ aside section h4 {
 	line-height: 35px;
 }
 .image_list li {
-    border: 1px dashed #CCCCCC;
     float: left;
-    margin: 0px 20px 20px 0px;
-    padding: 5px;
+    margin: 0 6px 6px 0;
+    background: #EEE;
+}
+.image_list li img {
+    max-width: 90px;
+    max-height: 90px;
+    width: 90px;
+    height: 90px;
 }
 
 section img {

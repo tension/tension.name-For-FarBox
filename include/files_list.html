@@ -2,7 +2,7 @@
 {% for file in files %}
     <li {% if file.content_type == 'folder' %}class="folder"{% endif %}>
         <a href="/file/{{file.path}}">
-            <img src='{{ file.url }}?width=160&height=160&fixed=true' title="{{ file.title }}" />
+            <img class="lazy" src='{{ file.url }}?width=80&height=80&fixed=true' title="{{ file.title }}" />
             {% if file.content_type == 'folder' %}
             <span>{{ file.images_count }} 张照片</span>
             {% endif %}
@@ -10,5 +10,11 @@
     </li>
 {% endfor %}
 </ul>
+<script type="text/javascript" src="https://raw.github.com/tuupola/jquery_lazyload/master/jquery.lazyload.min.js"></script>
+  <script type="text/javascript" charset="utf-8">
+      $(function() {
+          $("img.lazy").lazyload();
+      });
+  </script>
 
 {% include 'include/paginator.html' %}
