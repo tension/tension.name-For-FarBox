@@ -342,8 +342,8 @@ a:hover,a:focus {
 }
 
 #page {
-	/* width: 940px; */
-	width: 768px;
+	width: 940px;
+	/* width: 768px; */
 	margin: 0 auto;	
 }
 header {
@@ -420,8 +420,8 @@ p.entry_data span {
 	margin-bottom: 10px;
 }
 section.content {
-	/* width: 700px;
-    float: left; */
+	width: 700px;
+    float: left;
 	display: block;
 }
 
@@ -456,7 +456,7 @@ aside section h4 {
 }
 
 section img {
-	max-width: 768px;
+	max-width: 700px;
 }
 
 section table {

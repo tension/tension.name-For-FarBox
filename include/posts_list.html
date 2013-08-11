@@ -2,7 +2,7 @@
 	
 	    <article>
 	        <h2 class="title">
-	        	<a href="{{post.url}}#content">{{ post.title }}</a>
+	        	<a href="{{ post.url }}#content">{{ post.title }}</a>
 	        </h2>
 	
 	        <p class="entry_data">
@@ -15,7 +15,8 @@
 	            {% endfor %}
 	        </p>
 			
-			<span class="views">{{ post.visits }}</span>
+			<!--<span class="views">{{ post.visits }}</span>-->
+			<span class="ds-thread-count views" data-thread-key="{{ post.url }}" data-count-type="comments"></span>
 	
 	        <section>
 	            {{ post| auto_content }}

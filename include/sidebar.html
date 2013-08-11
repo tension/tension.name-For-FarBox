@@ -1,20 +1,13 @@
 	<aside>
 
-		<section class="category" >
-			<h4>Category</h4>
-			<ul>
-			{% set categories = get_folders(level=[1,2], min_posts_count=1) %}
-			{% for category in categories %}
-			    <li><a href="/category/{{ category.path }}">{{ category.title }}</a></li>
-			{% endfor %}
-			</ul>
+		<section class="latest Comments" >
+			<h4>Latest Comments</h4>
+			<ul class="ds-recent-comments" data-num-items="10" data-show-time="0" data-show-admin="0" data-excerpt-length="50"></ul>
 		</section>
 
-		<section class="tags" >
-			<h4>Tags</h4>
-			<ul>
-
-			</ul>
+		<section class="latest Comments" >
+			<h4>Recent Visitors</h4>
+			<ul class="ds-recent-visitors"></ul>
 		</section>
 		
 	</aside>
